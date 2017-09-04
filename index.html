@@ -1,0 +1,527 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>就这么"定"</title>
+	<link rel="shortcut icon" href="images/logo.png" />
+	<link rel="stylesheet" href="basic.css" />
+	
+</head>
+<style>
+    body{
+    	position: relative;
+    }
+	#lishi{
+		width:170px;
+		height:160px;
+		position:absolute;
+		left:290px;
+		top:67px;
+		text-align:center;
+		font-size:14px;
+		color:#666;
+		cursor:pointer;
+	}
+	.bigbox #shopcar{
+		width:180px;
+		height:638px;
+		background:rgba(204,204,204,0.8);
+		display:none;
+		position:absolute;
+		top:-5px;
+		right:-180px;
+		border-radius:16px;
+		font-size:12px;
+		color:#333;
+		opacity:1;
+   animation:two 1s;
+   -moz-animation:two 1s; /* Firefox */
+   -webkit-animation:two 1s; /* Safari and Chrome */
+   -o-animation:two 1s; /* Opera */
+	}
+	
+	.bigbox #shopcar #food{
+		margin-left:15px;
+		margin-top:12px;
+	}
+	.bigbox #shopcar #allprice{
+		font-size:12px;
+		color:#333;
+		margin-left:15px;
+	}
+	.bigbox #shopcar #addnum,#reducenum{
+		display:inline-block;
+		width:18px;
+		height:18px;
+	}
+	.bigbox #shopcar #addnum{
+		margin-left:28px;
+		margin-right:8px;
+		background:url(images/num.png) -28px 0px;
+		position:absolute;
+		left:80px;
+	}
+	.bigbox #shopcar #reducenum{
+		margin-left:7px;
+		background:url(images/num.png) -1px 0px;
+		position:absolute;
+		left:145px;
+	}
+	.bigbox #shopcar #num{
+		display:inline-block;
+		width:30px;
+		height:20px;
+		text-align:center;
+		line-height:20px;
+		position:absolute;
+		left:124px;
+	}
+	.bigbox #shopcar #order{
+		display:inline-block;
+		width:50px;
+		height:20px;
+		background:#666;
+		border-radius:6px;
+		color:#fff;
+		line-height:20px;
+		text-align:center;
+		position:absolute;
+		right:8px;
+		bottom:10px;
+		z-index:1;
+		cursor:pointer;
+	}
+	#foodnum{
+		display:inline-block;
+		background-color:#F00;
+		color:#fff;
+		width:20px;
+		height:20px;
+		text-align:center;
+		line-height:20px;
+		border-radius:20px;
+		position:absolute;
+		right:55px;
+		top:13px;
+	}
+	#left #imgs{
+		width:401px;
+		height:283px;
+		position: relative;
+		top:160px;
+		left:20px;
+		border:#fff 2px solid;
+		border-radius:8px;
+	}
+	#imgs #scroll_num{
+		position:absolute;
+		left:15px;
+		bottom:5px;
+	}
+	#imgs #scroll_num li{
+		display:inline-block;
+		width:15px;
+		height:15px;
+		list-style:none;
+		border:#999 1px solid;
+		text-align:center;
+		line-height:15px;
+		color:#999;
+		border-radius:5px;
+	}
+	#bgdetails{
+		width:1000px;
+		height:630px;
+		background:rgba(204,204,204,0.9);
+		position:absolute;
+		z-index:20;
+		border-radius:14px;
+		display:none;
+		text-align:center;
+		line-height:30px;
+		color:#000;
+	}
+	#bgdetails hr{
+		width:800px;
+		color:#eee;
+	}
+	#close_bg{
+		display:inline-block;
+		width:30px;
+		height:30px;
+		border:#90C solid 1px;
+		border-radius:30px;
+		color:#90C;
+		line-height:30px;
+		text-align:center;
+		font-size:32px;
+		margin-left:950px;
+		margin-top:15px;
+		}
+	#close_bg:hover{
+		border:#f00 solid 1px;
+		color:#f00;
+	}
+	#detimg{
+	   border:2px solid #90C;
+	   border-radius:12px;
+	}
+	#hot{
+	  position:relative;
+	  top:70px;
+	  left:80px;	
+	}
+	#hotp{
+	   position:absolute;
+	   color:#fff;
+	   font-size:13px;
+	   top:-28px;
+	   left:38px;	
+	}
+	.smallbox{
+		margin-top:15px;
+	}
+	.w_title{
+		text-align: center;
+		margin-top:15px ;
+		font-family: "微软雅黑";
+
+	}
+.bigbox{
+	height:660px;
+}
+#hot0,#hot1,#hot2{
+	position:relative;
+	top:-10px;
+  color:#666;
+  font-size:14px;
+  line-height:30px;	
+  cursor:pointer;
+}
+#hr{
+	display:block;
+	border-radius:5px 5px;
+	width:20px;
+	height:20px;
+	color:#fff;
+    position:relative;
+	left:95px;
+	top:-30px;	
+	font-size:15px;
+	text-align:center;
+}
+#hc{
+	display:block;
+	border-radius:5px 5px;
+	width:20px;
+	height:20px;
+	color:#fff;
+    position:relative;
+	left:-100px;
+	top:27px;	
+}
+#show{
+cursor:pointer;	
+}
+.liout{
+	background-color:white;
+
+}
+.liover{
+	background-color: #B18BB0;
+}
+.gouwu{
+	width:100px;
+	height: 500px;
+	position: absolute;
+	right: 10px;
+	top:10px;
+	border:1px solid red;
+}
+.shopp{
+	margin: 20px 0px 0px 20px;
+}
+#addnum,#reducenum{
+  cursor: pointer;
+}
+</style>
+<link rel="stylesheet" href="shopcar_1.css" >
+<body>
+	<div class="bigbox">
+		<div id="hidebg"></div>
+        <div id="bgdetails">
+        	<span id="close_bg">X</span>
+        </div>
+		<p class="w_title">就这么"定"</p>
+		<div class="smallbox"/>
+		<div id="left">
+			<div id="bgleft"></div>
+            <div id="hot">
+            <p id="hotp">今日热销</p>
+              <p><img src="images/hot.png" /><span id="hot0">敬请期待</span></p>
+               <p><img src="images/hot.png" /><span id="hot1">敬请期待</span></p>
+                <p><img src="images/hot.png" /><span id="hot2">敬请期待</span></p>
+            </div>
+			<div id="content" style="display:none">
+				<p><span id="details">菜单详情</span><span id="x">X</span></p>
+				<div id="foodimg">
+					<div id="foods"></div>
+				</div>
+				<span id="dishes"></span>
+				<span id="normal"></span>
+				<span id="real"></span>
+				<span id="buyfood">立即购买</span>
+			</div>
+			<p id="jilu">历史记录</p>
+			<div id="lishi"></div>
+			<p id="time"></p>
+			<div id="imgs">
+				<img src="images/1.jpg" id="pic"/>
+				<ul id="scroll_num">
+					<li onMouseOver="show(1)" onMouseOut="start()">1</li>
+					<li onMouseOver="show(2)" onMouseOut="start()">2</li>
+					<li onMouseOver="show(3)" onMouseOut="start()">3</li>
+				</ul>
+			</div>
+		</div>
+		<div id="right">
+			<div id="show"></div>
+		</div>
+		<div id="Login">
+			<span id="close">X</span>
+			<form action="" name="myform">
+				<p>用户名:<input type="text" id="username" name="username" /></p>
+				<p>密&nbsp;码:<input type="password" id="pwd" name="pwd" /></p>
+				<p>验证码:<input type="text" name="valcode"id="valcode" /></p>
+				<img src="http://localhost:8080/res/verifyCodeServlet" id="codeimg" alt="看不清，点击切换"/>
+			</form>
+			<p id="word">LOGIN</p>
+		</div>
+		<div id="Login_1">
+			<span id="close_x">X</span>
+			<form action="" name="myform1">
+				<p>送货地址:<input type="text" id="address" name="address" /></p>
+				<p>联系方式:<input type="password" id="tel" name="tel" /></p>
+				<p>送货时间:<input type="text" name="deliverytime"id="deliverytime" /></p>
+				<p>附&nbsp;&nbsp;言:<input type="text" name="ps"id="ps" /></p>
+			</form>
+			<p id="word_1">确认</p>
+		</div>
+	</div>
+	<div class="button">
+		<span id="showuser" style="display:none"></span>
+		<span id="login"><b>登录</b></span>
+		<div id="car"></div>
+		<span id="foodnum" style="display:none"></span>
+		<!--<span id="shop"><b>购物车</b></span>-->
+	</div>
+	<div id="shopcar">
+		<span id="order">确定下单</span>
+	</div>
+</div>
+
+<div id="volet_clos"> 
+<div id="volet">
+<a href="#volet_clos" aria-hidden="true" id="hc"><img src="images/hc.png" /></a>
+ <p>网上订餐</p>
+  <p>hzl&&lxd</p>
+   <a href="#volet" aria-hidden="true" id="hr"><img src="images/hr.png" /></a>
+    </div> 
+    </div>
+
+	
+    <script type="text/javascript" src="yclib.js"></script>
+    <script>
+		 var str="";
+   	  yc.ajaxRequest("http://localhost:8080/res/resfood.action",{
+   	  	"method":"POST",
+   	  	"send":"op=findAllFoods",
+   	  	"completeListener":function(){
+			//eval()将后台写的json格式字符串处理成json对象数组
+   	  	   json=eval("("+this.responseText+")");   //json全局变量
+   	  		for(var i=0;i<json.obj.length;i++){
+   	  			str+="<div width='180px' height='40px' class='menuPic'  id='f"+i+"'>";
+   	  			str+="<img class='foodPic' width='40px' height='40px' src='http://localhost:8080/res/images/"+json.obj[i].fphoto+"' />";
+   	  			str+="<span class='foodid'>"+json.obj[i].fname+"</span>";
+   	  			str+="</div>";
+   	  			json.obj[i];
+   	  		}
+   	  		yc.$("show").innerHTML=str;
+
+   	  		var arr=[];
+   	  		for(var j=0;arr.length<3;j++){
+   	  			var num=Math.floor(Math.random()*12);
+   	  			if(arr.indexOf(num)==-1){
+   	  				arr.push(num);
+   	  				yc.$("hot"+(arr.length-1)).innerHTML=json.obj[num].fname;
+   	  			}
+
+   	       }
+
+
+//点击菜单显示详情   yc.$("menuPic"+index)
+var divs=document.getElementById("show").getElementsByTagName("div");
+ for(var j=0;j<divs.length;j++){
+   	   	(function(index){
+   	   		yc.$("f"+j).onclick=function(){
+   	   			//显示出这道菜的详细信息
+   	   			//取点击到这道菜的id arr[index]
+   	   			 fid=index;
+   	   			yc.$("content").style.display="block";
+   	   			yc.$("bgleft").style.display="block";
+   	   			//开始拼接字符劝
+   	   			var hs='<img id="s'+fid+'" width="142px" height="95px" src="http://localhost:8080/res/images/'+json.obj[fid].fphoto+'">';
+   	   			var fname="菜名："+json.obj[fid].fname;
+   	   			var bprice="标准价："+json.obj[fid].normprice;
+   	   			var boom="惊爆价："+json.obj[fid].realprice;
+   	   			yc.$("foods").innerHTML=hs;
+   	   			yc.$("dishes").innerHTML=fname;
+   	   			yc.$("normal").innerHTML=bprice;
+   	   			yc.$("real").innerHTML=boom;
+
+   	   			fid++;
+   	   			yc.xssRequest("http://localhost:8080/res/resfood.action?op=findFood&fid="+fid,
+   	   			{
+   	   				"completeListener":function(){}
+   	   			});
+
+   	   			//查询存储的数据
+   	   			yc.$("lishi").innerHTML="";
+   	   			showHistory();
+   	   		}
+   	   	})(j);
+   	   }
+   	
+
+
+
+
+
+
+
+         
+ //今日热销里面的菜品点击显示详情
+   	   for(var x=0;x<3;x++){
+   	   	(function(index){
+   	   		yc.$("hot"+index).onclick=function(){
+   	   			//显示出这道菜的详细信息
+   	   			//取点击到这道菜的id
+   	   			 fid=arr[index];
+   	   			yc.$("content").style.display="block";
+   	   			yc.$("bgleft").style.display="block";
+   	   			//开始拼接字符劝
+   	   			var hs='<img id="s'+fid+'" width="142px" height="95px" src="http://localhost:8080/res/images/'+json.obj[fid].fphoto+'">';
+   	   			var fname="菜名："+json.obj[fid].fname;
+   	   			var bprice="标准价："+json.obj[fid].normprice;
+   	   			var boom="惊爆价："+json.obj[fid].realprice;
+   	   			yc.$("foods").innerHTML=hs;
+   	   			yc.$("dishes").innerHTML=fname;
+   	   			yc.$("normal").innerHTML=bprice;
+   	   			yc.$("real").innerHTML=boom;
+
+   	   			fid++;
+   	   			yc.xssRequest("http://localhost:8080/res/resfood.action?op=findFood&fid="+fid,
+   	   			{
+   	   				"completeListener":function(){}
+   	   			});
+
+   	   			//查询存储的数据
+   	   			yc.$("lishi").innerHTML="";
+   	   			showHistory();
+   	   		}
+   	   	})(x)
+   	   }
+     
+      }
+   	  	});
+
+   	  //查看历史记录
+   	  
+   	  function showHistory(){
+   	  	yc.xssRequest("http://localhost:8080/res/resfood.action?op=findAllSelectedFoods",{
+   	  		"completeListener":function(){
+   	  			var lishiJson=this.responseJSON.obj;   //局部变量
+   	  			console.log(lishiJson);
+   	  			console.log(lishiJson.length);
+   	  			//要倒序显示
+   	  			for(var i=lishiJson.length-1;i>=0;i--){
+   	  				var b=lishiJson[i].fname;
+   	  				var p=document.createElement("p");
+   	  				p.id=lishiJson[i].fid;
+   	  				p.innerHTML=b;
+   	  				//历史记录也要有限制的，最多九条
+   	  				var tag=yc.$("lishi").getElementsByTagName("p");
+   	  				if(tag.length>8){
+   	  					yc.$("lishi").removeChild(  yc.$("lishi").firstChild  );
+   	  					yc.$("lishi").appendChild(p);
+   	  				}else{
+   	  					yc.$("lishi").appendChild(p);
+   	  				}
+   	  			}
+
+   	  			//点击历史记录也要显示详情
+   	  			var tag=yc.$("lishi").getElementsByTagName("p");
+   	  			for(var i=tag.length-1;i>=0;i--){
+   	  				(function(index){
+   	  					tag[index].onclick=function(){
+   	  						 fid=tag[index].id;
+   	  						yc.$("content").style.display="block";
+   	   			            yc.$("bgleft").style.display="block";
+   	   			   //开始拼接字符劝
+   	   			     var hs='<img id="s'+fid+'" width="142px" height="95px" src="http://localhost:8080/res/images/'+json.obj[fid-1].fphoto+'">';
+   	   			     var fname="菜名："+json.obj[fid-1].fname;
+   	   			     var bprice="标准价："+json.obj[fid-1].normprice;
+   	   			     var boom="惊爆价："+json.obj[fid-1].realprice;
+   	   			     yc.$("foods").innerHTML=hs;
+   	   			     yc.$("dishes").innerHTML=fname;
+   	   			     yc.$("normal").innerHTML=bprice;
+   	   			     yc.$("real").innerHTML=boom;
+   	  					}
+   	  				})(i)
+   	  			}
+   	  		}
+   	  	});
+   	  }
+
+      showHistory();
+
+   	  yc.$("x").onclick=function(){
+   	  	yc.$("content").style.display="none";
+   	  	yc.$("bgleft").style.display="none";
+   	  }
+    
+     
+//图片轮换
+     var timer;
+     var index=0;
+     function show(id){
+     	if(Number(id)){
+     		clearInterval(timer);
+     		index=id;
+     	}else{
+     		index=index%3+1;
+     	}
+
+      document.getElementById("pic").setAttribute("src","images/"+index+".jpg");	
+
+     var lis=document.getElementById("scroll_num").getElementsByTagName("li");
+     for(var i=0;i<lis.length;i++){
+     	lis[i].setAttribute("class","liout");
+     	if(i==index-1){
+     		lis[i].setAttribute("class","liover");
+     	}
+     }
+     }
+
+   
+     show();
+    timer=window.setInterval("show()",2000);
+    function start(){
+   	   	  timer=window.setInterval("show()",2000);
+   	   }
+
+    </script>
+    <script src="login.js"></script>
+    <script src="buys.js"></script>
+</body>
+</html>
